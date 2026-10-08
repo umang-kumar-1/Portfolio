@@ -153,7 +153,13 @@ export function Hero() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const chatting = msgs.length > 0;
 
-  useEffect(() => { setHello(greeting()); return () => timers.current.forEach(clearTimeout); }, []);
+  useEffect(() => {
+    setHello(greeting());
+    const currentTimers = timers.current;
+    return () => {
+      currentTimers.forEach(clearTimeout);
+    };
+  }, []);
   useEffect(() => {
     if (chatting) endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [msgs, chatting]);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { CustomCursor } from "@/components/cursor/CustomCursor";
 import { Preloader } from "@/components/preloader/Preloader";
 import { Navbar } from "@/components/navbar/Navbar";
@@ -13,8 +13,6 @@ import { Contact } from "@/components/contact/Contact";
 import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
-  const [loaded, setLoaded] = useState(false);
-
   // Always open at the top: stop the browser restoring an old scroll position.
   useEffect(() => {
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -27,7 +25,7 @@ export default function Home() {
 
   return (
     <>
-      <Preloader onComplete={() => { setLoaded(true); window.scrollTo(0, 0); }} />
+      <Preloader onComplete={() => { window.scrollTo(0, 0); }} />
       <CustomCursor />
       <Navbar />
       <main className="relative min-h-screen">
