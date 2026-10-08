@@ -21,6 +21,7 @@ export function answer(raw: string): Answer {
   };
   if (has(q, "claude", "agent sdk", "feedback loop", "guardrail")) return detail("claude-feedback-tool");
   if (has(q, "classic", "spfx", "annotation", "screenshot")) return detail("classic-feedback-tool");
+  if (has(q, "team management", "license", "asset", "rbac")) return detail("team-management-system");
   if (has(q, "image", "picture")) return detail("image-management");
   if (has(q, "teams", "exporter")) return detail("teams-chat-exporter");
   if (has(q, "webstudio", "cms", "multi-tenant")) {
@@ -32,7 +33,7 @@ export function answer(raw: string): Answer {
   }
   if (has(q, "project", "built", "build", "portfolio", "show")) {
     return {
-      text: `I've worked on ${projects.length} key projects:\n\n${projects.map(p => `- **${p.title}** — ${p.category}`).join("\n")}\n\nWebStudio powers 3 live production sites, including two for German clients. The Claude Feedback Tool is a ~29.6k-line TypeScript solo project.`,
+      text: `Here are the ${projects.length} projects I have worked on:\n\n${projects.map(p => `- **${p.title}** — ${p.category}`).join("\n")}\n\nWebStudio powers 3 live production sites, including two for German clients. The Claude Feedback Tool is a solo project of about 29.6k lines of TypeScript.`,
       artifacts: projects.map(p => ({ title: p.title, kind: p.category, target: "projects", accent: p.accentColor })),
       followUps: ["Tell me about WebStudio", "Tell me about the Claude Feedback Tool"],
     };

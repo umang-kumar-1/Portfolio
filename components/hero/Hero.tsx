@@ -318,7 +318,7 @@ export function Hero() {
               style={{ background: "linear-gradient(to top, var(--bg-primary) 70%, transparent)" }}>
               {composer}
               <p className="text-center mono-label mt-3" style={{ textTransform: "none", letterSpacing: "0.02em" }}>
-                Umang is a portfolio assistant and answers from his real resume.
+                This assistant answers only from Umang's resume.
               </p>
             </div>
           </>

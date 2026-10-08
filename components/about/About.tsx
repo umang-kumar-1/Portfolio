@@ -10,7 +10,7 @@ export function About() {
         {personal.summary}
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
         {stats.map(s => (
           <div key={s.label} className="warm-card p-5">
             <div className="font-serif text-3xl font-medium" style={{ color: "#D97757" }}>{s.value}</div>

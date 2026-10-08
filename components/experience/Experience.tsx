@@ -48,6 +48,7 @@ export function Experience() {
             <div className="mono-label mt-1.5 mb-3">{e.period}</div>
             <p className="text-sm" style={{ color: "var(--text-secondary)" }}>{e.institution}</p>
             <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>{e.university}</p>
+            {e.note && <p className="text-sm mt-3 font-medium" style={{ color: "#D97757" }}>{e.note}</p>}
           </div>
         ))}
       </div>
